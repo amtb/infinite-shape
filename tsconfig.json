@@ -1,6 +1,9 @@
 {
   "compilerOptions": { 
     "target": "es2017",
+    "lib": [
+      "es2019"
+    ],
     "module": "commonjs",
     "alwaysStrict": true,
     "noUnusedLocals": true,
@@ -13,7 +16,8 @@
     "noImplicitReturns":true,
     "sourceMap": true,
     "noEmitOnError": true,
-    "outDir": "./build"
+    "outDir": "./build",
+    "resolveJsonModule": true
   },
   "compileOnSave": true, 
   "exclude": [
