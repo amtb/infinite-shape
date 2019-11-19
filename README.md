@@ -4,9 +4,55 @@ Infinite shape challenge [![Build Status](https://travis-ci.com/amtb/infinite-sh
 ## Algorithm
 The implementation is not recursive, and the complexity is `O(n*2)`.
 
-The shape could be folded in 4 with symetric lines.
-So the goal was to build that top left quarter of the shape and mirror it twice.
-  
+The shape looks like the following:
+
+```
+                       filled line
+                 <------------------------>|
+                                           |
+                 +----------------------------------------------------+
+             ^   |                         |                          |
+padding lines|   |      <----------------> |                          |
+             v   |                         |                          |
+                 |      +--------------------------------------+      |
+                 |      |                  |                   |      |
+                 |      |     <----------> |                   |      |
+                 |      |                  |                   |      |
+                 |      |     +--------------------------+     |      |
+                 |      |     |            |             |     |      |
+                 |      |     |            |             |     |      |
+                 |      |     |            |             |     |      |
+                 |      |     |            |             |     |      |
+          -------------------------------------------------------------------- symmetry axis
+                 |      |     |            |             |     |      |
+                 |      |     |            |             |     |      |
+                 |      |     |            |             |     |      |
+                 |      |     |            |             |     |      |
+                 |      |     |            |             |     |      |
+                 |      |     +--------------------------+     |      |
+                 |      |                  |                   |      |
+                 |      |                  |                   |      |
+                 |      +--------------------------------------+      |
+                 |                         |                          |
+                 |                         |                          |
+                 |                         |                          |
+                 |                         |                          |
+                 +----------------------------------------------------+
+                                           |
+                                           |
+                                           |
+                                 symmetry axis
+
+```
+
+- padding lines are the same as the previous filled line with dashes replaced by empty spaces.
+
+The goal was to build that top left quarter of the shape and mirror it (twice).
+To build the top left quarter, we:
+- build filled lines reduce in size as we go in depth (reduce the width by padding each iteration)
+- add padding lines as long as the filled lines are not empty
+- and handle last iterations / corner cases.
+
 ## Pre-requisites
 - Node.js <br/>
 The famous one https://nodejs.org/en/
