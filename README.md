@@ -73,6 +73,7 @@ Once the install guide is followed
 
 ## Development guide
 - Use `yarn run test:watch`
+
 You can also launch it from VSCode using the Jest All button in the Debugger menu.
 
 ## Screenshots
