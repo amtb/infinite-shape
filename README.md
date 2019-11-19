@@ -77,13 +77,13 @@ You can also launch it from VSCode using the Jest All button in the Debugger men
 
 ## Screenshots
 ### 20-40-6
-![20-40-6](./screenshots/20-40-6.png)
+![20-40-6](./screenshots/20-40-6.PNG)
 
 ### 60-60-10
-![60-60-10](./screenshots/60-60-10.png)
+![60-60-10](./screenshots/60-60-10.PNG)
 
 ### 80-20-16
-![80-20-16](./screenshots/80-20-16.png)
+![80-20-16](./screenshots/80-20-16.PNG)
 
 
 
