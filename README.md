@@ -8,7 +8,7 @@ The shape looks like the following:
 
 ```
                        filled line
-                 <------------------------>|
+                 <------------------------>+
                                            |
                  +----------------------------------------------------+
              ^   |                         |                          |
@@ -19,11 +19,11 @@ padding lines|   |      <----------------> |                          |
                  |      |     <----------> |                   |      |
                  |      |                  |                   |      |
                  |      |     +--------------------------+     |      |
-                 |      |     |            |             |     |      |
-                 |      |     |            |             |     |      |
-                 |      |     |            |             |     |      |
-                 |      |     |            |             |     |      |
-          -------------------------------------------------------------------- symmetry axis
+            +--------------------+         |             |     |      |
+            |    |      |     |  |         |             |     |      |
+border      |    |<---> +<--->+  |         |             |     |      |
+(repeated pattern)      |     |  |         |             |     |      |
+          +------+---------------+-------------------------------------------+ symmetry axis
                  |      |     |            |             |     |      |
                  |      |     |            |             |     |      |
                  |      |     |            |             |     |      |
@@ -40,8 +40,9 @@ padding lines|   |      <----------------> |                          |
                  +----------------------------------------------------+
                                            |
                                            |
-                                           |
+                                           +
                                  symmetry axis
+
 
 ```
 
@@ -49,8 +50,9 @@ padding lines|   |      <----------------> |                          |
 
 The goal was to build that top left quarter of the shape and mirror it (twice).
 To build the top left quarter, we:
-- build filled lines reduce in size as we go in depth (reduce the width by padding each iteration)
-- add padding lines as long as the filled lines are not empty
+- build filled lines that reduce in size as we go in depth (reduce the width by padding each iteration)
+- build borders (repeated pattern of pipes + padding / 2 times spaces)
+- add padding lines 
 - and handle last iterations / corner cases.
 
 ## Pre-requisites
