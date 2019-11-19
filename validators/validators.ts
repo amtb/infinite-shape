@@ -37,7 +37,7 @@ export function validate(width: number, height: number, padding: number): string
 }
 
 /**
- * Checks if the given number is odd
+ * Checks if the given number is even (without using a lib)
  * @param num the number to check
  */
 export function isEven(num: number): boolean {
