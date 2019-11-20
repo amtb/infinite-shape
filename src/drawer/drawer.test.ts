@@ -1,5 +1,5 @@
+import rawJsonData = require('../../test_data.json');
 import { Shape } from '../models';
-import rawJsonData = require('../test_data.json');
 import { drawShape } from './drawer';
 
 interface RawTestCase {
