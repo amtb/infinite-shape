@@ -5,10 +5,11 @@
   "author": "Alpha Barry",
   "private": true,
   "devDependencies": {
-    "jest-html-reporter": "^2.7.0"
+    "jest-html-reporter": "^2.7.0",
+    "nodemon": "^1.19.4"
   },
   "scripts": {
-    "start": "node ./build/main.js",
+    "start": "nodemon",
     "build": "tsc",
     "test": "jest --no-cache",
     "test:watch": "yarn run test --watchAll",
@@ -19,6 +20,7 @@
     "@types/node": "^8.0.47",
     "jest": "^24.9.0",
     "ts-jest": "^24.1.0",
+    "ts-node": "^8.5.2",
     "tslint": "^5.8.0",
     "typescript": "^3.4.0"
   },
@@ -28,15 +30,21 @@
       ".ts": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts)$",
-    "moduleFileExtensions": ["ts", "js"],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
     "reporters": [
       "default",
-      ["./node_modules/jest-html-reporter", {
+      [
+        "./node_modules/jest-html-reporter",
+        {
           "pageTitle": "Tests report",
           "includeFailureMsg": true,
           "includeConsoleLog": true,
           "outputPath": "test-report/index.html"
-      }]
-  ]
+        }
+      ]
+    ]
   }
 }
