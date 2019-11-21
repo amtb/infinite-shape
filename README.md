@@ -68,7 +68,7 @@ The application is available in two modes.
 
 - `server` mode where the application can be targeted via an http call to build and returned the shape based on the inputs sent by the client.
 
-The server is hosted and accessible at `https://tangled-api.herokuapp.com/`
+The server is hosted and accessible at https://tangled-api.herokuapp.com/
 
 ### Install guide
 - Clone the repository
