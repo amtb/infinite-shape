@@ -1,12 +1,14 @@
-import express = require('express');
-import {configure as configureLog4js, connectLogger, getLogger} from 'log4js';
+import express from 'express';
+import * as log4js from 'log4js';
+import * as swaggerUI from 'swagger-ui-express';
+import openApi from '../openapi.json';
 import { drawShape } from './drawer';
 import { validate } from './validators';
 
 const app = express();
 
 // middlewares
-configureLog4js({
+log4js.configure({
   appenders: {
     console: { type: 'console' }
   },
@@ -14,8 +16,8 @@ configureLog4js({
     default: { appenders: ['console'], level: 'trace' }
   }
  });
-const logger = getLogger('app');
-app.use(connectLogger(logger, {format: ':method :url :status'}));
+const logger = log4js.getLogger('app');
+app.use(log4js.connectLogger(logger, {format: ':method :url :status'}));
 
 // list to GET /shape
 app.get('/shape', (request: express.Request, response: express.Response) => {
@@ -30,6 +32,9 @@ app.get('/shape', (request: express.Request, response: express.Response) => {
     response.send({shape});
   }
 });
+
+// serve the swagger ui at the root
+app.use('/', swaggerUI.serve, swaggerUI.setup(openApi));
 
 // fire it up
 const port = Number(process.env.PORT) || 3000;
