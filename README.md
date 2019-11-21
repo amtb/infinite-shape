@@ -62,21 +62,33 @@ The famous one https://nodejs.org/en/
 - Yarn <br/>
 Alternative/Challenger to `npm`, see https://yarnpkg.com/lang/en/
 
-## Install guide
+## Application
+The application is available in two modes.
+- `console` mode where the app runs in console and draws a fixed set of rectangles.
+
+- `server` mode where the application can be targeted via an http call to build and returned the shape based on the inputs sent by the client.
+
+### Install guide
 - Clone the repository
 - Install the dependencies using `yarn`
 - Build the application using `yarn run build`
-- Start the application using `yarn run start`
+- Start the application using
+    - `yarn run start:console` for the `console` mode
+    - `yarn run start:server` for the `server` mode
 
-## Testing
+### Testing
 Once the install guide is followed
 - Run the unit tests using `yarn run test`
 - Open the `index.html` file inside the `test-report` folder to see the report.
 
-## Development guide
-- Use `yarn run test:watch`
+### Development guide
+The commands below re-run the app after you modify the source code.
 
-You can also launch it from VSCode using the Jest All button in the Debugger menu.
+- Use `yarn run test:watch` for the console mode 
+
+To debug, you can use the VSCode launch menu inside the Debugger menu.
+
+- Use `yarn run server:watch` to launch the server in dev mode
 
 ## Screenshots
 ### 20-40-6
@@ -88,5 +100,7 @@ You can also launch it from VSCode using the Jest All button in the Debugger men
 ### 80-20-16
 ![80-20-16](./screenshots/80-20-16.PNG)
 
-
-
+### Built with
+- express
+- jest
+- nodemon
