@@ -21,8 +21,11 @@ const logger = log4js.getLogger('app');
 app.use(log4js.connectLogger(logger, {format: ':method :url :status'}));
 
 // enable cors
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://localhost:4200').split(',');
+logger.info(`Allowed origins: ${allowedOrigins.join()}`);
+
 app.use(cors({
-  origin: (process.env.ALLOWED_ORIGINS || 'http://localhost:4200').split(',')
+  origin: allowedOrigins
 }));
 
 // list to GET /shape
