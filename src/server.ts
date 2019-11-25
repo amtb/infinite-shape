@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express from 'express';
 import * as log4js from 'log4js';
 import * as swaggerUI from 'swagger-ui-express';
@@ -18,6 +19,11 @@ log4js.configure({
  });
 const logger = log4js.getLogger('app');
 app.use(log4js.connectLogger(logger, {format: ':method :url :status'}));
+
+// enable cors
+app.use(cors({
+  origin: (process.env.ALLOWED_ORIGINS || 'http://localhost:4200').split(',')
+}));
 
 // list to GET /shape
 app.get('/shape', (request: express.Request, response: express.Response) => {
