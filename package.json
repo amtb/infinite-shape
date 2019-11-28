@@ -4,14 +4,9 @@
   "description": "Concentric tangled rectangles",
   "author": "Alpha Barry",
   "private": true,
-  "devDependencies": {
-    "@types/cors": "^2.8.6",
-    "@types/express": "^4.17.2",
-    "@types/swagger-ui-express": "^4.1.0",
-    "jest-html-reporter": "^2.7.0",
-    "nodemon": "^1.19.4"
-  },
   "scripts": {
+    "newman": "newman",
+    "start-server-and-test": "start-server-and-test",
     "build": "tsc",
     "start:console": "yarn run ts-node ./src/console.ts",
     "start:server": "yarn run ts-node ./src/server.ts",
@@ -32,5 +27,14 @@
     "ts-node": "^8.5.2",
     "tslint": "^5.8.0",
     "typescript": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.2",
+    "@types/swagger-ui-express": "^4.1.0",
+    "jest-html-reporter": "^2.7.0",
+    "newman": "^4.5.6",
+    "nodemon": "^1.19.4",
+    "start-server-and-test": "^1.10.6"
   }
 }
