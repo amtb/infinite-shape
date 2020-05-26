@@ -2,7 +2,11 @@ language: node_js
 node_js:
   - "stable"
 
-sudo: true
+env:
+  global:
+    - POSTMAN_COLLECTION=https://api.getpostman.com/collections/$POSTMAN_COLLECTION_ID?apikey=$POSTMAN_API_KEY
+    - POSTMAN_ENVIRONMENT=https://api.getpostman.com/environments/$POSTMAN_ENV_ID?apikey=$POSTMAN_API_KEY
+
 dist: trusty
 
 branches:
@@ -13,3 +17,4 @@ script:
   - yarn run lint
   - yarn run build
   - yarn run test
+  - yarn start-server-and-test start:server 3000 "yarn newman run $POSTMAN_COLLECTION -e $POSTMAN_ENVIRONMENT"
