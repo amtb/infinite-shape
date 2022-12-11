@@ -24,7 +24,7 @@
     "@types/jest": "^24.0.23",
     "@types/node": "^8.0.47",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jest": "^24.9.0",
     "log4js": "^6.1.0",
     "swagger-ui-express": "^4.1.2",
